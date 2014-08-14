@@ -7,10 +7,9 @@ int  main (){
   double *r;
   int N=pow(10,5);
   int M=100;
-  double dim= rand();
   int i,j=0;
   FILE *f;
-
+  double dim= rand();
   r=malloc(sizeof(float)*N);
   f=fopen("datos.dat","w");
  
@@ -24,11 +23,12 @@ int  main (){
   for(i=0;i<=N;i++){
     //haciendo un punto
     int x,y=0;
+    srand48(i);
 
     for(j=0;j<=M;j++){
     
-      float dim= (rand()+0.0)/RAND_MAX;
-      float dir= (rand()+0.0)/RAND_MAX;
+      float dim= drand48();
+      float dir= drand48();
       //toma valores en x----------------------------
       if(dim<=0.5){
 	
